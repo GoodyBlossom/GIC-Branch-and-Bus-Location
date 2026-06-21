@@ -145,11 +145,11 @@ export const transportStates: TransportState[] = [
         stops: [
           {
             id: "lagos-agbara",
-            name: "MRS Fuel Station",
+            name: "MRS Filling Station, Oko Afo Bus Stop, Lagos - Badagry Expressway, Agbara Badagry 103101, Lagos",
             area: "Agbara / Oko Afo",
             managerName: "Ebenezer",
             phone: "09029277207",
-            mapQuery: "MRS Fuel Station, Agbara, Lagos",
+            mapQuery: "MRS Filling Station, Oko Afo Bus Stop, Lagos - Badagry Expressway, Agbara Badagry 103101, Lagos",
           },
         ],
       },
@@ -158,11 +158,11 @@ export const transportStates: TransportState[] = [
         stops: [
           {
             id: "lagos-iyana-iba",
-            name: "Aratunmi Bus-Stop",
+            name: "Iyana School Bus Stop, Summit Rd, Lasu Rd, Ojo, Iba 104102",
             area: "Iyana Iba",
             managerName: "Alex",
             phone: "08052863586",
-            mapQuery: "Aratunmi Bus-Stop, Iyana Iba, Lagos",
+            mapQuery: "Iyana School Bus Stop, Summit Rd, Lasu Rd, Ojo, Iba 104102",
           },
         ],
       },
@@ -171,11 +171,11 @@ export const transportStates: TransportState[] = [
         stops: [
           {
             id: "lagos-isolo-cele-jakande",
-            name: "Jakande (MRS Filling Station) & Cele Bus-Stop",
+            name: "MRS Filling Station Jakande Gate, G8H5+JP9, Oke - Afa, Egbe Rd, Lagos",
             area: "Isolo / Cele / Jakande Gate",
-            managerName: "Temi",
+            managerName: "Temidayo",
             phone: "08133367072",
-            mapQuery: "Jakande MRS Filling Station, Isolo, Lagos",
+            mapQuery: "MRS Filling Station Jakande Gate, G8H5+JP9, Oke - Afa, Egbe Rd, Lagos",
           },
         ],
       },
@@ -184,24 +184,37 @@ export const transportStates: TransportState[] = [
         stops: [
           {
             id: "lagos-alagbole-akute",
-            name: "Four Square Gospel Church Junction, Akute",
+            name: "Foursquare Gospel Church, Alagbole - Akute Rd, Fabolude St, near Firstbank, Ajuwon/Akute 112107, Ogun State",
             area: "Alagbole / Akute",
             managerName: "Michael",
             phone: "08135386750",
-            mapQuery: "Four Square Gospel Church Junction, Akute, Lagos",
+            mapQuery: "Foursquare Gospel Church, Alagbole - Akute Rd, Fabolude St, near Firstbank, Ajuwon/Akute 112107, Ogun State",
           },
         ],
       },
       {
-        name: "Ogba / Iju-Ishaga",
+        name: "Iju Ishaga",
         stops: [
           {
-            id: "lagos-ogba-iju",
-            name: "Beside BRT Park, Opposite County Estate, Agege",
-            area: "Ogba / Iju-Ishaga",
+            id: "lagos-iju-ishaga",
+            name: "BRT Bus Station, Opposite County Estate, Pen Cinema, Ifako Agege, Agege 101232, Lagos",
+            area: "Iju Ishaga",
             managerName: "Newton",
             phone: "08037671006",
-            mapQuery: "BRT Park, Opposite County Estate, Agege, Lagos",
+            mapQuery: "M9G8+G8 Agege, Lagos",
+          },
+        ],
+      },
+      {
+        name: "Ogba / Ikeja",
+        stops: [
+          {
+            id: "lagos-ogba-ikeja",
+            name: "Excellence Hotel Aguda, Ijaiye Road/Yaya Abatan Roundabout Ogba 101233, Lagos",
+            area: "Ogba / Ikeja",
+            managerName: "Newton",
+            phone: "08037671006",
+            mapQuery: "Excellence Hotel Aguda, Ijaiye Road/Yaya Abatan Roundabout Ogba 101233, Lagos",
           },
         ],
       },
@@ -210,11 +223,11 @@ export const transportStates: TransportState[] = [
         stops: [
           {
             id: "lagos-gbagada",
-            name: "UBA Ifako / R-Jolad",
+            name: "R Jolad Hospital Gbagada, Ashimowu St, Off Akindele Rd, Off Diya St, Abule Okuta, Lagos 102216, Lagos",
             area: "Gbagada / New Garage",
-            managerName: "Tope",
+            managerName: "Temitope",
             phone: "09075788256",
-            mapQuery: "UBA Ifako, Gbagada, Lagos",
+            mapQuery: "R Jolad Hospital Gbagada, Ashimowu St, Off Akindele Rd, Off Diya St, Abule Okuta, Lagos 102216, Lagos",
           },
         ],
       },

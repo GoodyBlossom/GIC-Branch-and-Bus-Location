@@ -5,7 +5,7 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].m
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-BDntA3hT.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BvAtNIKu.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var styles_default = "/assets/styles-CrAalIkS.css";
@@ -221,7 +221,7 @@ var Route$1 = createFileRoute("/sitemap.xml")({ server: { handlers: { GET: async
 		"Cache-Control": "public, max-age=3600"
 	} });
 } } } });
-var $$splitComponentImporter = () => import("./routes-U2CE5Npe.mjs");
+var $$splitComponentImporter = () => import("./routes-BvmDfXcS.mjs");
 var title = "The Goodland — Church Branch & Transport Locator";
 var description = "Find church branches across Nigeria and internationally, view service times, and locate the bus transport pickup point nearest to you.";
 var Route = createFileRoute("/")({
