@@ -86,7 +86,10 @@ export function TransportSection() {
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
             Bus Transport
           </p>
-          <h2 className="mt-2 text-3xl sm:text-4xl">Find your nearest pickup point</h2>
+          <h2 className="mt-2 flex items-center gap-2.5 text-3xl sm:text-4xl">
+            <Bus className="h-7 w-7 shrink-0 text-primary sm:h-8 sm:w-8" />
+            <span>Find your nearest pickup point</span>
+          </h2>
           <p className="mt-3 text-muted-foreground">
             Choose a state and area to see available bus stops and contact your bus manager.
           </p>

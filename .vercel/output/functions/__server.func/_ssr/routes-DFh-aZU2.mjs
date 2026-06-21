@@ -6,7 +6,7 @@ import { n as clsx, t as cva } from "../_libs/class-variance-authority+clsx.mjs"
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { a as SelectItemIndicator, c as SelectPortal, d as SelectSeparator$1, f as SelectTrigger$1, i as SelectItem$1, l as SelectScrollDownButton$1, m as SelectViewport, n as SelectContent$1, o as SelectItemText, p as SelectValue$1, r as SelectIcon, s as SelectLabel$1, t as Select$1, u as SelectScrollUpButton$1 } from "../_libs/@radix-ui/react-select+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DagqAf7H.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DFh-aZU2.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var branches = [
@@ -846,9 +846,9 @@ function TransportSection() {
 						className: "text-sm font-semibold uppercase tracking-wide text-primary",
 						children: "Bus Transport"
 					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-						className: "mt-2 text-3xl sm:text-4xl",
-						children: "Find your nearest pickup point"
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+						className: "mt-2 flex items-center gap-2.5 text-3xl sm:text-4xl",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Bus, { className: "h-7 w-7 shrink-0 text-primary sm:h-8 sm:w-8" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Find your nearest pickup point" })]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "mt-3 text-muted-foreground",
