@@ -33,7 +33,7 @@ export const branches: Branch[] = [
     location: "Oworoshoki, Lagos",
     scope: "Nigeria",
     serviceTimes: [
-      { label: "Sunday", value: "07:15AM · 09:00AM · 10:45AM" },
+      { label: "Sunday", value: "07:00AM · 08:45AM · 10:30AM" },
       { label: "Wednesday Midweek", value: "06:00PM" },
     ],
     address: "The Goodland, Ifako Bus Stop, Oworoshoki Expressway, Lagos",
@@ -41,7 +41,7 @@ export const branches: Branch[] = [
   },
   {
     id: "surulere",
-    name: "Surulere Center",
+    name: "Surulere Branch",
     region: "Lagos",
     location: "Surulere, Lagos",
     scope: "Nigeria",
@@ -54,7 +54,7 @@ export const branches: Branch[] = [
   },
   {
     id: "lekki",
-    name: "Lekki Center",
+    name: "Lekki Branch",
     region: "Lagos",
     location: "Lekki, Lagos",
     scope: "Nigeria",
@@ -70,7 +70,7 @@ export const branches: Branch[] = [
   // ---------- NIGERIA · ABUJA ----------
   {
     id: "abuja",
-    name: "Abuja Center",
+    name: "Abuja Branch",
     region: "Abuja",
     location: "Wuse, Abuja",
     scope: "Nigeria",
