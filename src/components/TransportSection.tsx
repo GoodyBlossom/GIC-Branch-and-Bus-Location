@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
-import { Bus, MapPin, Phone, User } from "lucide-react";
+import { Bus, MapPin, Phone, User, Copy } from "lucide-react";
 import { transportStates, type BusStop } from "@/data/locations";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 import {
   Dialog,
   DialogContent,
@@ -32,12 +33,27 @@ function StopCard({ stop }: { stop: BusStop }) {
         <p className="flex items-center gap-2 text-muted-foreground">
           <User className="h-4 w-4 shrink-0 text-primary" /> {stop.managerName}
         </p>
-        <a
-          href={`tel:${stop.phone}`}
-          className="flex items-center gap-2 font-medium text-primary"
-        >
-          <Phone className="h-4 w-4 shrink-0" /> {stop.phone}
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={`tel:${stop.phone}`}
+            className="flex items-center gap-2 font-medium text-primary hover:underline"
+            title="Click to dial"
+          >
+            <Phone className="h-4 w-4 shrink-0" /> {stop.phone}
+          </a>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              navigator.clipboard.writeText(stop.phone);
+              toast.success("Phone number copied to clipboard!");
+            }}
+            className="rounded p-1 text-muted-foreground hover:bg-secondary hover:text-foreground cursor-pointer"
+            title="Copy to clipboard"
+            aria-label="Copy phone number"
+          >
+            <Copy className="h-3.5 w-3.5" />
+          </button>
+        </div>
       </div>
       <div className="mt-5">
         <Dialog>

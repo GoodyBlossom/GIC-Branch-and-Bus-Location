@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Clock, MapPin, Phone } from "lucide-react";
+import { Clock, MapPin, Phone, Copy } from "lucide-react";
 import type { Branch } from "@/data/locations";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 import {
   Dialog,
   DialogContent,
@@ -97,13 +98,30 @@ export function BranchCard({ branch }: { branch: Branch }) {
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {branch.enquiries.map((p) => (
-                      <a
+                      <div
                         key={p}
-                        href={`tel:${p}`}
-                        className="rounded-lg bg-secondary px-3 py-1.5 text-sm font-medium text-secondary-foreground transition-colors hover:bg-accent"
+                        className="flex items-center overflow-hidden rounded-lg border border-border bg-secondary"
                       >
-                        {p}
-                      </a>
+                        <a
+                          href={`tel:${p}`}
+                          className="px-3 py-1.5 text-sm font-medium text-secondary-foreground transition-colors hover:bg-accent/50"
+                          title="Click to dial"
+                        >
+                          {p}
+                        </a>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            navigator.clipboard.writeText(p);
+                            toast.success("Phone number copied to clipboard!");
+                          }}
+                          className="border-l border-border px-2 py-1.5 text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground cursor-pointer"
+                          title="Copy to clipboard"
+                          aria-label="Copy phone number"
+                        >
+                          <Copy className="h-3.5 w-3.5" />
+                        </button>
+                      </div>
                     ))}
                   </div>
                 </div>

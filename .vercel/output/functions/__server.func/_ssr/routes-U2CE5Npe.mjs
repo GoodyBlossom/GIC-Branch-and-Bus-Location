@@ -1,12 +1,13 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { i as Slot, s as require_jsx_runtime } from "../_libs/@radix-ui/react-arrow+[...].mjs";
-import { a as Phone, c as MapPin, d as ExternalLink, f as Clock, g as Bus, h as Check, i as Sun, l as Instagram, m as ChevronDown, n as X, o as Moon, p as ChevronUp, r as User, s as Menu, t as Youtube, u as Facebook } from "../_libs/lucide-react.mjs";
+import { n as toast } from "../_libs/sonner.mjs";
+import { _ as Bus, a as Phone, c as MapPin, d as ExternalLink, f as Copy, g as Check, h as ChevronDown, i as Sun, l as Instagram, m as ChevronUp, n as X, o as Moon, p as Clock, r as User, s as Menu, t as Youtube, u as Facebook } from "../_libs/lucide-react.mjs";
 import { n as clsx, t as cva } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { a as SelectItemIndicator, c as SelectPortal, d as SelectSeparator$1, f as SelectTrigger$1, i as SelectItem$1, l as SelectScrollDownButton$1, m as SelectViewport, n as SelectContent$1, o as SelectItemText, p as SelectValue$1, r as SelectIcon, s as SelectLabel$1, t as Select$1, u as SelectScrollUpButton$1 } from "../_libs/@radix-ui/react-select+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DFh-aZU2.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-U2CE5Npe.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var branches = [
@@ -601,10 +602,24 @@ function BranchCard({ branch }) {
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { className: "h-4 w-4 text-primary" }), " Enquiries"]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 									className: "flex flex-wrap gap-2",
-									children: branch.enquiries.map((p) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-										href: `tel:${p}`,
-										className: "rounded-lg bg-secondary px-3 py-1.5 text-sm font-medium text-secondary-foreground transition-colors hover:bg-accent",
-										children: p
+									children: branch.enquiries.map((p) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "flex items-center overflow-hidden rounded-lg border border-border bg-secondary",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+											href: `tel:${p}`,
+											className: "px-3 py-1.5 text-sm font-medium text-secondary-foreground transition-colors hover:bg-accent/50",
+											title: "Click to dial",
+											children: p
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+											onClick: (e) => {
+												e.preventDefault();
+												navigator.clipboard.writeText(p);
+												toast.success("Phone number copied to clipboard!");
+											},
+											className: "border-l border-border px-2 py-1.5 text-muted-foreground transition-colors hover:bg-accent/50 hover:text-foreground cursor-pointer",
+											title: "Copy to clipboard",
+											"aria-label": "Copy phone number",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Copy, { className: "h-3.5 w-3.5" })
+										})]
 									}, p))
 								})] }) : null,
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapEmbed, {
@@ -782,14 +797,28 @@ function StopCard({ stop }) {
 						" ",
 						stop.managerName
 					]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: `tel:${stop.phone}`,
-					className: "flex items-center gap-2 font-medium text-primary",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { className: "h-4 w-4 shrink-0" }),
-						" ",
-						stop.phone
-					]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center gap-2",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+						href: `tel:${stop.phone}`,
+						className: "flex items-center gap-2 font-medium text-primary hover:underline",
+						title: "Click to dial",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Phone, { className: "h-4 w-4 shrink-0" }),
+							" ",
+							stop.phone
+						]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: (e) => {
+							e.preventDefault();
+							navigator.clipboard.writeText(stop.phone);
+							toast.success("Phone number copied to clipboard!");
+						},
+						className: "rounded p-1 text-muted-foreground hover:bg-secondary hover:text-foreground cursor-pointer",
+						title: "Copy to clipboard",
+						"aria-label": "Copy phone number",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Copy, { className: "h-3.5 w-3.5" })
+					})]
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {

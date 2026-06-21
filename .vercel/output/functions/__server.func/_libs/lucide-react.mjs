@@ -200,6 +200,24 @@ var Clock = createLucideIcon("clock", [["circle", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Copy = createLucideIcon("copy", [["rect", {
+	width: "14",
+	height: "14",
+	x: "8",
+	y: "8",
+	rx: "2",
+	ry: "2",
+	key: "17jyea"
+}], ["path", {
+	d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2",
+	key: "zix9uf"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var ExternalLink = createLucideIcon("external-link", [
 	["path", {
 		d: "M15 3h6v6",
@@ -395,4 +413,4 @@ var Youtube = createLucideIcon("youtube", [["path", {
 	key: "1jp15x"
 }]]);
 //#endregion
-export { Phone as a, MapPin as c, ExternalLink as d, Clock as f, Bus as g, Check as h, Sun as i, Instagram as l, ChevronDown as m, X as n, Moon as o, ChevronUp as p, User as r, Menu as s, Youtube as t, Facebook as u };
+export { Bus as _, Phone as a, MapPin as c, ExternalLink as d, Copy as f, Check as g, ChevronDown as h, Sun as i, Instagram as l, ChevronUp as m, X as n, Moon as o, Clock as p, User as r, Menu as s, Youtube as t, Facebook as u };
