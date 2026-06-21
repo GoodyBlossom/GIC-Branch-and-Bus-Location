@@ -66,6 +66,15 @@ export const branches: Branch[] = [
       "L'avenida Multipurpose Hall, Lakeview Park One, Opp. Ikota Shopping Complex after VGC",
     mapQuery: "Lakeview Park One, Ikota, Lekki, Lagos",
   },
+  {
+    id: "isolo",
+    name: "Isolo Branch",
+    region: "Lagos",
+    location: "Isolo, Lagos",
+    scope: "Nigeria",
+    address: "123 Mushin Road, Beside Isolo General Hospital, Isolo, Lagos 100026, Lagos",
+    mapQuery: "123 Mushin Road, Beside Isolo General Hospital, Isolo, Lagos 100026, Lagos",
+  },
 
   // ---------- NIGERIA · ABUJA ----------
   {

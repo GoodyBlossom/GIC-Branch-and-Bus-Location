@@ -6,7 +6,7 @@ import { n as clsx, t as cva } from "../_libs/class-variance-authority+clsx.mjs"
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { a as SelectItemIndicator, c as SelectPortal, d as SelectSeparator$1, f as SelectTrigger$1, i as SelectItem$1, l as SelectScrollDownButton$1, m as SelectViewport, n as SelectContent$1, o as SelectItemText, p as SelectValue$1, r as SelectIcon, s as SelectLabel$1, t as Select$1, u as SelectScrollUpButton$1 } from "../_libs/@radix-ui/react-select+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CyUlUG-x.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DagqAf7H.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var branches = [
@@ -57,6 +57,15 @@ var branches = [
 		}],
 		address: "L'avenida Multipurpose Hall, Lakeview Park One, Opp. Ikota Shopping Complex after VGC",
 		mapQuery: "Lakeview Park One, Ikota, Lekki, Lagos"
+	},
+	{
+		id: "isolo",
+		name: "Isolo Branch",
+		region: "Lagos",
+		location: "Isolo, Lagos",
+		scope: "Nigeria",
+		address: "123 Mushin Road, Beside Isolo General Hospital, Isolo, Lagos 100026, Lagos",
+		mapQuery: "123 Mushin Road, Beside Isolo General Hospital, Isolo, Lagos 100026, Lagos"
 	},
 	{
 		id: "abuja",
