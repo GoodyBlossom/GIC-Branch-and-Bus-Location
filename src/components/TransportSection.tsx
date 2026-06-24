@@ -136,47 +136,76 @@ export function TransportSection() {
         ) : (
           <>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div>
+              <div className="relative">
                 <label className="mb-1.5 block text-sm font-medium text-foreground">
                   State
                 </label>
-                <Select
-                  value={state}
-                  onValueChange={(v) => {
-                    setState(v);
-                    setArea("");
-                  }}
-                  modal={false}
-                >
-                  <SelectTrigger className="bg-card">
-                    <SelectValue placeholder="Select state" />
-                  </SelectTrigger>
-                  <SelectContent>
+                <div className="relative">
+                  <Select
+                    value={state}
+                    onValueChange={(v) => {
+                      setState(v);
+                      setArea("");
+                    }}
+                  >
+                    <SelectTrigger className="bg-card relative z-0">
+                      <SelectValue placeholder="Select state" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {transportStates.map((s) => (
+                        <SelectItem key={s.name} value={s.name}>
+                          {s.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <select
+                    className="absolute inset-0 z-10 h-full w-full opacity-0 sm:hidden cursor-pointer disabled:cursor-not-allowed"
+                    value={state}
+                    onChange={(e) => {
+                      setState(e.target.value);
+                      setArea("");
+                    }}
+                    aria-label="Select state"
+                  >
+                    <option value="" disabled>Select state</option>
                     {transportStates.map((s) => (
-                      <SelectItem key={s.name} value={s.name}>
-                        {s.name}
-                      </SelectItem>
+                      <option key={s.name} value={s.name}>{s.name}</option>
                     ))}
-                  </SelectContent>
-                </Select>
+                  </select>
+                </div>
               </div>
 
-              <div>
+              <div className="relative">
                 <label className="mb-1.5 block text-sm font-medium text-foreground">
                   Area
                 </label>
-                <Select value={area} onValueChange={setArea} disabled={!selectedState} modal={false}>
-                  <SelectTrigger className="bg-card">
-                    <SelectValue placeholder="Select area" />
-                  </SelectTrigger>
-                  <SelectContent>
+                <div className="relative">
+                  <Select value={area} onValueChange={setArea} disabled={!selectedState}>
+                    <SelectTrigger className="bg-card relative z-0">
+                      <SelectValue placeholder="Select area" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {areas.map((a) => (
+                        <SelectItem key={a.name} value={a.name}>
+                          {a.name}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <select
+                    className="absolute inset-0 z-10 h-full w-full opacity-0 sm:hidden cursor-pointer disabled:cursor-not-allowed"
+                    value={area}
+                    onChange={(e) => setArea(e.target.value)}
+                    disabled={!selectedState}
+                    aria-label="Select area"
+                  >
+                    <option value="" disabled>Select area</option>
                     {areas.map((a) => (
-                      <SelectItem key={a.name} value={a.name}>
-                        {a.name}
-                      </SelectItem>
+                      <option key={a.name} value={a.name}>{a.name}</option>
                     ))}
-                  </SelectContent>
-                </Select>
+                  </select>
+                </div>
               </div>
             </div>
 
