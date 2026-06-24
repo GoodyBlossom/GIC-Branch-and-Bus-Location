@@ -146,6 +146,7 @@ export function TransportSection() {
                     setState(v);
                     setArea("");
                   }}
+                  modal={false}
                 >
                   <SelectTrigger className="bg-card">
                     <SelectValue placeholder="Select state" />
@@ -164,7 +165,7 @@ export function TransportSection() {
                 <label className="mb-1.5 block text-sm font-medium text-foreground">
                   Area
                 </label>
-                <Select value={area} onValueChange={setArea} disabled={!selectedState}>
+                <Select value={area} onValueChange={setArea} disabled={!selectedState} modal={false}>
                   <SelectTrigger className="bg-card">
                     <SelectValue placeholder="Select area" />
                   </SelectTrigger>
