@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Clock, MapPin, Phone, Copy } from "lucide-react";
 import type { Branch } from "@/data/locations";
 import { Button } from "@/components/ui/button";
@@ -15,11 +15,11 @@ import { MapEmbed } from "@/components/MapEmbed";
 function ServiceTimes({ branch }: { branch: Branch }) {
   if (!branch.serviceTimes?.length) return null;
   return (
-    <ul className="space-y-1.5">
+    <ul className="space-y-1.5 flex-1 min-w-0">
       {branch.serviceTimes.map((s) => (
-        <li key={s.label} className="flex gap-2 text-sm">
+        <li key={s.label} className="flex gap-2 text-sm min-w-0">
           <span className="min-w-0 shrink-0 font-medium text-foreground">{s.label}:</span>
-          <span className="min-w-0 text-muted-foreground">{s.value}</span>
+          <span className="flex-1 min-w-0 text-muted-foreground break-words">{s.value}</span>
         </li>
       ))}
     </ul>
@@ -30,8 +30,18 @@ export function BranchCard({ branch }: { branch: Branch }) {
   const [open, setOpen] = useState(false);
   const place = branch.address ?? branch.venue ?? "";
 
+  useEffect(() => {
+    const handleClose = () => setOpen(false);
+    window.addEventListener("hashchange", handleClose);
+    window.addEventListener("popstate", handleClose);
+    return () => {
+      window.removeEventListener("hashchange", handleClose);
+      window.removeEventListener("popstate", handleClose);
+    };
+  }, []);
+
   return (
-    <article className="flex flex-col rounded-2xl border border-border bg-card p-5 shadow-soft transition-shadow hover:shadow-card">
+    <article className="flex flex-col rounded-2xl border border-border bg-card p-5 shadow-soft transition-shadow hover:shadow-card min-w-0 w-full">
       <div className="flex min-w-0 items-start justify-between gap-3">
         <div className="min-w-0">
           <h3 className="truncate text-lg text-card-foreground">{branch.name}</h3>
@@ -42,17 +52,17 @@ export function BranchCard({ branch }: { branch: Branch }) {
         </div>
       </div>
 
-      <div className="mt-4 space-y-3">
+      <div className="mt-4 space-y-3 min-w-0">
         {branch.serviceTimes?.length ? (
-          <div className="flex gap-2.5">
+          <div className="flex gap-2.5 min-w-0">
             <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
             <ServiceTimes branch={branch} />
           </div>
         ) : null}
 
-        <p className="flex gap-2.5 text-sm text-muted-foreground">
+        <p className="flex gap-2.5 text-sm text-muted-foreground min-w-0">
           <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-          <span>{place}</span>
+          <span className="flex-1 min-w-0 break-words">{place}</span>
         </p>
       </div>
 

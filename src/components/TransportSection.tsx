@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { Bus, MapPin, Phone, User, Copy } from "lucide-react";
 import { transportStates, type BusStop } from "@/data/locations";
 import { Button } from "@/components/ui/button";
@@ -20,11 +20,23 @@ import {
 import { MapEmbed } from "@/components/MapEmbed";
 
 function StopCard({ stop }: { stop: BusStop }) {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClose = () => setOpen(false);
+    window.addEventListener("hashchange", handleClose);
+    window.addEventListener("popstate", handleClose);
+    return () => {
+      window.removeEventListener("hashchange", handleClose);
+      window.removeEventListener("popstate", handleClose);
+    };
+  }, []);
+
   return (
-    <article className="flex flex-col rounded-2xl border border-border bg-card p-5 shadow-soft">
-      <h4 className="flex items-center gap-2 text-lg text-card-foreground">
-        <Bus className="h-4 w-4 shrink-0 text-primary" />
-        <span className="truncate">{stop.name}</span>
+    <article className="flex flex-col rounded-2xl border border-border bg-card p-5 shadow-soft min-w-0 w-full">
+      <h4 className="flex items-start gap-2 text-lg text-card-foreground">
+        <Bus className="mt-1 h-4 w-4 shrink-0 text-primary" />
+        <span className="break-words font-medium">{stop.name}</span>
       </h4>
       <p className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
         <MapPin className="h-3.5 w-3.5 shrink-0 text-primary" /> {stop.area}
@@ -56,7 +68,7 @@ function StopCard({ stop }: { stop: BusStop }) {
         </div>
       </div>
       <div className="mt-5">
-        <Dialog>
+        <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <Button variant="secondary" className="w-full">
               View on Map
