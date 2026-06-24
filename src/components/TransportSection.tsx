@@ -136,11 +136,13 @@ export function TransportSection() {
         ) : (
           <>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="relative">
+              <div>
                 <label className="mb-1.5 block text-sm font-medium text-foreground">
                   State
                 </label>
-                <div className="relative">
+                
+                {/* Desktop Radix Select */}
+                <div className="hidden sm:block">
                   <Select
                     value={state}
                     onValueChange={(v) => {
@@ -148,7 +150,7 @@ export function TransportSection() {
                       setArea("");
                     }}
                   >
-                    <SelectTrigger className="bg-card relative z-0">
+                    <SelectTrigger className="bg-card">
                       <SelectValue placeholder="Select state" />
                     </SelectTrigger>
                     <SelectContent>
@@ -159,8 +161,12 @@ export function TransportSection() {
                       ))}
                     </SelectContent>
                   </Select>
+                </div>
+                
+                {/* Mobile Native Select */}
+                <div className="relative sm:hidden">
                   <select
-                    className="absolute inset-0 z-10 h-full w-full opacity-0 sm:hidden cursor-pointer disabled:cursor-not-allowed"
+                    className="flex h-9 w-full appearance-none items-center justify-between whitespace-nowrap rounded-md border border-input bg-card px-3 py-2 text-sm shadow-sm ring-offset-background focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                     value={state}
                     onChange={(e) => {
                       setState(e.target.value);
@@ -173,16 +179,21 @@ export function TransportSection() {
                       <option key={s.name} value={s.name}>{s.name}</option>
                     ))}
                   </select>
+                  <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                    <svg className="h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </span>
                 </div>
               </div>
 
-              <div className="relative">
+              <div>
                 <label className="mb-1.5 block text-sm font-medium text-foreground">
                   Area
                 </label>
-                <div className="relative">
+                
+                {/* Desktop Radix Select */}
+                <div className="hidden sm:block">
                   <Select value={area} onValueChange={setArea} disabled={!selectedState}>
-                    <SelectTrigger className="bg-card relative z-0">
+                    <SelectTrigger className="bg-card">
                       <SelectValue placeholder="Select area" />
                     </SelectTrigger>
                     <SelectContent>
@@ -193,8 +204,12 @@ export function TransportSection() {
                       ))}
                     </SelectContent>
                   </Select>
+                </div>
+
+                {/* Mobile Native Select */}
+                <div className="relative sm:hidden">
                   <select
-                    className="absolute inset-0 z-10 h-full w-full opacity-0 sm:hidden cursor-pointer disabled:cursor-not-allowed"
+                    className="flex h-9 w-full appearance-none items-center justify-between whitespace-nowrap rounded-md border border-input bg-card px-3 py-2 text-sm shadow-sm ring-offset-background focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                     value={area}
                     onChange={(e) => setArea(e.target.value)}
                     disabled={!selectedState}
@@ -205,6 +220,9 @@ export function TransportSection() {
                       <option key={a.name} value={a.name}>{a.name}</option>
                     ))}
                   </select>
+                  <span className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                    <svg className="h-4 w-4 opacity-50" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                  </span>
                 </div>
               </div>
             </div>
