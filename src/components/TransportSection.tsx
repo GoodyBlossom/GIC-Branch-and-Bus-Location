@@ -33,48 +33,51 @@ function StopCard({ stop }: { stop: BusStop }) {
   }, []);
 
   return (
-    <article className="flex flex-col rounded-2xl border border-border bg-card p-5 shadow-soft min-w-0 w-full">
-      <h4 className="flex items-start gap-2 text-lg text-card-foreground">
+    <article className="flex flex-col rounded-2xl border border-border bg-card p-4 sm:p-5 shadow-soft min-w-0 w-full">
+      <h4 className="flex items-start gap-2 text-base sm:text-lg text-card-foreground">
         <Bus className="mt-1 h-4 w-4 shrink-0 text-primary" />
         <span className="break-words font-medium">{stop.name}</span>
       </h4>
-      <p className="mt-1 flex items-center gap-1.5 text-sm text-muted-foreground">
+      <p className="mt-1 flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground ml-6">
         <MapPin className="h-3.5 w-3.5 shrink-0 text-primary" /> {stop.area}
       </p>
-      <div className="mt-4 space-y-2 text-sm">
-        <p className="flex items-center gap-2 text-muted-foreground">
-          <User className="h-4 w-4 shrink-0 text-primary" /> {stop.managerName}
-        </p>
-        <div className="flex items-center gap-2">
-          <a
-            href={`tel:${stop.phone}`}
-            className="flex items-center gap-2 font-medium text-primary hover:underline"
-            title="Click to dial"
-          >
-            <Phone className="h-4 w-4 shrink-0" /> {stop.phone}
-          </a>
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              navigator.clipboard.writeText(stop.phone);
-              toast.success("Phone number copied to clipboard!");
-            }}
-            className="rounded p-1 text-muted-foreground hover:bg-secondary hover:text-foreground cursor-pointer"
-            title="Copy to clipboard"
-            aria-label="Copy phone number"
-          >
-            <Copy className="h-3.5 w-3.5" />
-          </button>
+      <div className="mt-3.5 border-t border-border/50 pt-3 text-xs sm:text-sm">
+        <div className="flex flex-col gap-2 min-[400px]:flex-row min-[400px]:items-center min-[400px]:justify-between">
+          <p className="flex items-center gap-2 text-muted-foreground min-w-0">
+            <User className="h-4 w-4 shrink-0 text-primary" />
+            <span className="truncate">{stop.managerName}</span>
+          </p>
+          <div className="flex items-center gap-2 min-w-0 shrink-0">
+            <a
+              href={`tel:${stop.phone}`}
+              className="flex items-center gap-2 font-medium text-primary hover:underline truncate"
+              title="Click to dial"
+            >
+              <Phone className="h-4 w-4 shrink-0" /> {stop.phone}
+            </a>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                navigator.clipboard.writeText(stop.phone);
+                toast.success("Phone number copied to clipboard!");
+              }}
+              className="rounded p-1 text-muted-foreground hover:bg-secondary hover:text-foreground cursor-pointer"
+              title="Copy to clipboard"
+              aria-label="Copy phone number"
+            >
+              <Copy className="h-3.5 w-3.5" />
+            </button>
+          </div>
         </div>
       </div>
-      <div className="mt-5">
+      <div className="mt-4">
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
-            <Button variant="secondary" className="w-full">
+            <Button variant="secondary" className="w-full h-9 text-xs sm:text-sm sm:h-10">
               View on Map
             </Button>
           </DialogTrigger>
-          <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg">
+          <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-lg">
             <DialogHeader>
               <DialogTitle className="font-display text-xl">{stop.name}</DialogTitle>
             </DialogHeader>
